@@ -1,0 +1,26 @@
+{
+  "name": "bigquery-js-udf-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  	"lint": "standard --fix --env jest",
+    "test": "jest",
+    "ci": "npm run lint && npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thedumbterminal/bigquery-js-udf-example.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thedumbterminal/bigquery-js-udf-example/issues"
+  },
+  "homepage": "https://github.com/thedumbterminal/bigquery-js-udf-example#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^26.6.3",
+    "standard": "^16.0.3"
+  }
+}
