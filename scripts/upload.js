@@ -21,6 +21,7 @@ const uploadFile = (bucket, dest, source) => {
 
 const upload = async () => {
   const bucketName = process.env.DEST_BUCKET
+  if (!bucketName) throw new Error('DEST BUCKET env var not set')
   const bucket = await createBucketIfNeeded(bucketName)
   await uploadFile(bucket, 'bigquery-js-udf-example', 'dist/dist.js')
 }
