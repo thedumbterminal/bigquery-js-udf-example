@@ -21,7 +21,7 @@ jobs:
 
     steps:
     - env: # Or as an environment variable
-      DEST_BUCKET: ${{ secrets.DEST_BUCKET }}
+        DEST_BUCKET: ${{ secrets.DEST_BUCKET }}
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
