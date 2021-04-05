@@ -11,10 +11,9 @@ describe('BigQuery tests', () => {
 
   it('works', async () => {
     const query = 'SELECT 1 AS result;'
-    const options = {
+    const [job] = await bigquery.createQueryJob({
       query
-    }
-    const [job] = await bigquery.createQueryJob(options)
+    })
     const [rows] = await job.getQueryResults()
     expect(rows[0].result).toBe(1)
   })
