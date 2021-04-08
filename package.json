@@ -5,10 +5,12 @@
   "main": "index.js",
   "scripts": {
     "lint": "standard --fix --env jest",
-    "test": "jest --testTimeout=10000",
+    "test": "jest src",
+    "test:dist": "jest test/system/dist.test.js",
+    "test:bigquery": "jest --testTimeout=10000 test/system/bigquery.test.js",
     "build": "webpack",
     "deploy": "node scripts/upload.js",
-    "ci": "npm run lint && npm run build && npm test && npm run deploy"
+    "ci": "npm run lint && npm test && npm run build && npm run test:dist && npm run deploy && npm run test:bigquery"
   },
   "repository": {
     "type": "git",
