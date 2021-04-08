@@ -1,6 +1,6 @@
 const typeExamples = require('./typeExamples')
 
-describe('testExamples', () => {
+describe('type examples', () => {
   describe('boolean()', () => {
     it('returns a boolean', () => {
       expect(typeExamples.boolean()).toBe(true)

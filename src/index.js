@@ -1,6 +1,10 @@
 const typeExamples = require('./typeExamples')
 
-// Put functionality you need in the global scope for BiqQuery usage
-global.typeExamples = typeExamples
+const index = module.exports = {}
 
-global.helloWorld = () => 'Hello World!'
+index.typeExamples = typeExamples
+index.helloWorld = () => 'Hello World!'
+index.echo = (input) => input
+
+// Put functionality you need in the global scope for BiqQuery usage
+Object.assign(global, index)
