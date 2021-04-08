@@ -6,7 +6,7 @@ CREATE TEMP FUNCTION testFunction()
   RETURNS ${returnType}
     LANGUAGE js
     OPTIONS (
-      library=["gs://thedumbterminal/bigquery-js-udf-example/dist/dist.js"]
+      library=["gs://${process.env.DEST_BUCKET}/bigquery-js-udf-example/dist/dist.js"]
     )
     AS """
       ${js}
