@@ -13,9 +13,8 @@ const createBucketIfNeeded = async (bucketName) => {
 }
 
 const uploadFile = (bucket, dest, source) => {
-  const destination = path.join(dest, source)
   return bucket.upload(source, {
-    destination
+    destination: path.join(dest, source)
   })
 }
 
