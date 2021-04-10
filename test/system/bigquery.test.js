@@ -1,19 +1,19 @@
 const { BigQuery } = require('@google-cloud/bigquery')
 
-const runUdf = async (client, returnType, js) => {
+const runUdf = async (client, returnType, js, params = '', input = '') => {
   const query = `
-CREATE TEMP FUNCTION testFunction()
+CREATE TEMP FUNCTION testFunction(${params})
   RETURNS ${returnType}
     LANGUAGE js
     OPTIONS (
       library=["gs://${process.env.DEST_BUCKET}/bigquery-js-udf-example/dist/dist.js"]
     )
-    AS """
+    AS r"""
       ${js}
     """
 ;
 
-SELECT testFunction() AS result;`
+SELECT testFunction(${input}) AS result;`
   const [job] = await client.createQueryJob({
     query
   })
@@ -55,5 +55,10 @@ describe('BigQuery tests', () => {
       { one: 1, two: 2, three: 3 },
       { one: 1, two: 2, three: 3 }
     ])
+  })
+
+  it('echo()', async () => {
+    const result = await runUdf(bigquery, 'STRING', 'return echo(word);', 'word STRING', '"echo"')
+    expect(result).toBe('echo')
   })
 })
