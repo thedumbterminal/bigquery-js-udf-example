@@ -61,4 +61,9 @@ describe('BigQuery tests', () => {
     const result = await runUdf(bigquery, 'STRING', 'return echo(word);', 'word STRING', '"echo"')
     expect(result).toBe('echo')
   })
+
+  it('sillyName()', async () => {
+    const result = await runUdf(bigquery, 'STRING', 'return sillyName();')
+    expect(result).toMatch(/^\w+ \w+$/)
+  })
 })

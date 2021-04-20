@@ -8,6 +8,7 @@ describe('dist', () => {
       })
     })
   })
+
   describe('helloWorld()', () => {
     it('returns the greeting', () => {
       expect(global.helloWorld()).toBe('Hello World!')

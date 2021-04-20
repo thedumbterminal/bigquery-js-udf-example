@@ -22,7 +22,9 @@
     "url": "https://github.com/thedumbterminal/bigquery-js-udf-example/issues"
   },
   "homepage": "https://github.com/thedumbterminal/bigquery-js-udf-example#readme",
-  "dependencies": {},
+  "dependencies": {
+    "sillyname": "^0.1.0"
+  },
   "devDependencies": {
     "@google-cloud/bigquery": "^5.5.0",
     "@google-cloud/storage": "^5.8.2",

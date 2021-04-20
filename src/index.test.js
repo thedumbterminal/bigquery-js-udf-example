@@ -6,4 +6,10 @@ describe('test index', () => {
       expect(index.echo('echo')).toBe('echo')
     })
   })
+
+  describe('sillyName()', () => {
+    it('returns string with two words', () => {
+      expect(index.sillyName()).toMatch(/^\w+ \w+$/)
+    })
+  })
 })
