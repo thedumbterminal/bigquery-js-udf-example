@@ -8,5 +8,5 @@ index.helloWorld = () => 'Hello World!'
 index.echo = (input) => input
 index.sillyName = generateName
 
-// Put functionality you need in the global scope for BiqQuery usage
+// Put functionality you need in the global scope for BigQuery usage
 Object.assign(global, index)
