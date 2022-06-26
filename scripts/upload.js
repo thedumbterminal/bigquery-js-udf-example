@@ -7,7 +7,7 @@ const createBucketIfNeeded = async (bucketName) => {
   try {
     await storage.createBucket(bucketName)
   } catch (e) {
-    if (e.message !== 'Sorry, that name is not available. Please try a different one.') throw e
+    if (e.message !== 'The requested bucket name is not available. The bucket namespace is shared by all users of the system. Please select a different name and try again.') throw e
   }
   return storage.bucket(bucketName)
 }
